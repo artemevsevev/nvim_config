@@ -23,5 +23,7 @@ require("lazy").setup({
       "s1n7ax/nvim-window-picker"
     }
   },
-  { 'nvim-treesitter/nvim-treesitter' }
+  { 'nvim-treesitter/nvim-treesitter' },
+  { 'neovim/nvim-lspconfig' },
+  { "ellisonleao/gruvbox.nvim", priority = 1000 }
 })
