@@ -65,4 +65,11 @@ require("lazy").setup({
 		end,
 	},
 	{ "folke/which-key.nvim" },
+	{ "hrsh7th/vim-vsnip" },
+	{ "hrsh7th/vim-vsnip-integ" },
+	{
+		"glepnir/dashboard-nvim",
+		event = "VimEnter",
+		dependencies = { { "nvim-tree/nvim-web-devicons" } },
+	},
 })
