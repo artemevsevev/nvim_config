@@ -42,4 +42,27 @@ require("lazy").setup({
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 	{ "jose-elias-alvarez/null-ls.nvim" },
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+			"linrongbin16/lsp-progress.nvim",
+		},
+	},
+	{ "nvim-tree/nvim-web-devicons" },
+	{ "windwp/nvim-autopairs" },
+	{ "akinsho/toggleterm.nvim", version = "*", config = true },
+	{ "Djancyp/outline" },
+	{ "terrortylor/nvim-comment" },
+	{ "akinsho/bufferline.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
+	{ "hrsh7th/cmp-nvim-lsp-signature-help" },
+	{
+		"linrongbin16/lsp-progress.nvim",
+		event = { "VimEnter" },
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			require("lsp-progress").setup()
+		end,
+	},
+	{ "folke/which-key.nvim" },
 })
