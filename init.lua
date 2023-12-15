@@ -12,10 +12,17 @@ end
 vim.opt.rtp:prepend(lazypath) 
 
 require("lazy").setup({
-	"sainnhe/everforest"
+	"sainnhe/everforest",
+  "williamboman/mason.nvim",
+  "williamboman/mason-lspconfig.nvim",
+  "neovim/nvim-lspconfig",
+  "WhoIsSethDaniel/mason-tool-installer.nvim"
 })
 
 vim.cmd("colorscheme everforest")
 
 require('base')
 require('keymap')
+require('p-mason')
+require('p-lsp')
+require('lsp-lua')
