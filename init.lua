@@ -12,6 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+  'nvim-treesitter/nvim-treesitter',
+
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-path',
@@ -56,3 +58,4 @@ require('p-tree')
 require('p-telescope')
 require('p-bookmark')
 require('p-cmp')
+require('p-treesitter')
