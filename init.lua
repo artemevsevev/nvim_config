@@ -12,6 +12,12 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+  'hrsh7th/cmp-nvim-lsp',
+  'hrsh7th/cmp-buffer',
+  'hrsh7th/cmp-path',
+  'hrsh7th/cmp-cmdline',
+  'hrsh7th/nvim-cmp',
+
   'MattesGroeger/vim-bookmarks',
   'tom-anders/telescope-vim-bookmarks.nvim',
   'sainnhe/everforest',
@@ -49,3 +55,4 @@ require('p-conform')
 require('p-tree')
 require('p-telescope')
 require('p-bookmark')
+require('p-cmp')
