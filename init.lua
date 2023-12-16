@@ -23,6 +23,16 @@ require('lazy').setup({
   },
   'nvim-tree/nvim-tree.lua',
   'nvim-tree/nvim-web-devicons',
+  {
+    'windwp/nvim-autopairs',
+    event = 'InsertEnter',
+    opts = {},
+  },
+  {
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.5',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+  },
 })
 
 vim.cmd('colorscheme everforest')
@@ -34,3 +44,4 @@ require('p-lsp')
 require('lsp-lua')
 require('p-conform')
 require('p-tree')
+require('p-telescope')
