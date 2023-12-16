@@ -1,6 +1,12 @@
-require("conform").setup({
+require('conform').setup({
   formatters_by_ft = {
-    lua = { "stylua" },
+    lua = { 'stylua' },
+    json = { 'prettierd' },
+    yaml = { 'prettierd' },
+    html = { 'prettierd' },
+    css = { 'prettierd' },
+    markdown = { 'prettierd' },
+    graphql = { 'prettierd' },
   },
   format_on_save = {
     timeout_ms = 500,

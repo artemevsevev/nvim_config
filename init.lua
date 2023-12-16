@@ -12,6 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+  'MattesGroeger/vim-bookmarks',
+  'tom-anders/telescope-vim-bookmarks.nvim',
   'sainnhe/everforest',
   'williamboman/mason.nvim',
   'williamboman/mason-lspconfig.nvim',
@@ -46,3 +48,4 @@ require('lsp-lua')
 require('p-conform')
 require('p-tree')
 require('p-telescope')
+require('p-bookmark')
