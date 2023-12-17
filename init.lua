@@ -13,6 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   {
+    'nvim-lualine/lualine.nvim',
     'folke/flash.nvim',
     event = 'VeryLazy',
     opts = {},
@@ -127,3 +128,4 @@ require('p-cmp')
 require('p-treesitter')
 require('p-text')
 require('p-comment')
+require('p-lualine')
