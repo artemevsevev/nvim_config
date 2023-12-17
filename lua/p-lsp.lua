@@ -11,7 +11,6 @@ require('lspsaga').setup({
   symbol_in_winbar = {
     enable = false,
   },
-  enable = false,
 })
 
 --keymap.set('n', '<space>D', vim.diagnostic.open_float)

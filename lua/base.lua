@@ -26,7 +26,7 @@ vim.bo.autoread = true
 opt.cursorline = true
 opt.termguicolors = true
 
-opt.signcolumn = "yes"
+opt.signcolumn = 'yes:2'
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()

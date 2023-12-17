@@ -13,6 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   {
+    'lewis6991/gitsigns.nvim',
     'simrat39/rust-tools.nvim',
     'nvimdev/lspsaga.nvim',
     'nvim-lualine/lualine.nvim',
@@ -132,3 +133,4 @@ require('p-text')
 require('p-comment')
 require('p-lualine')
 require('lsp-rust')
+require('p-git')
