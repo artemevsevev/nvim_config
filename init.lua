@@ -9,9 +9,14 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
+
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+  {
+    'Exafunction/codeium.vim',
+    event = 'BufEnter',
+  },
   {
     'lewis6991/gitsigns.nvim',
     'simrat39/rust-tools.nvim',
