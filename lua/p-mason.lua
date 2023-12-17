@@ -15,5 +15,6 @@ require('mason-tool-installer').setup({
     'lua-language-server',
     'stylua',
     'prettierd',
+    'rust-analyzer',
   },
 })

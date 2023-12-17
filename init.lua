@@ -13,6 +13,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   {
+    'simrat39/rust-tools.nvim',
+    'nvimdev/lspsaga.nvim',
     'nvim-lualine/lualine.nvim',
     'folke/flash.nvim',
     event = 'VeryLazy',
@@ -129,3 +131,4 @@ require('p-treesitter')
 require('p-text')
 require('p-comment')
 require('p-lualine')
+require('lsp-rust')
