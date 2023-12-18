@@ -18,11 +18,12 @@ require('lazy').setup({
     'Exafunction/codeium.vim',
     event = 'BufEnter',
   },
+
+  'lewis6991/gitsigns.nvim',
+  'simrat39/rust-tools.nvim',
+  'nvimdev/lspsaga.nvim',
+  'nvim-lualine/lualine.nvim',
   {
-    'lewis6991/gitsigns.nvim',
-    'simrat39/rust-tools.nvim',
-    'nvimdev/lspsaga.nvim',
-    'nvim-lualine/lualine.nvim',
     'folke/flash.nvim',
     event = 'VeryLazy',
     opts = {},
