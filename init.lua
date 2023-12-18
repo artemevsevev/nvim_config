@@ -123,6 +123,7 @@ require('lazy').setup({
 })
 
 require('gruvbox').setup({
+  transparent_mode = true,
   overrides = {
     GitSignsAdd = { link = 'GruvboxGreenSign' },
     GitSignsChange = { link = 'GruvboxAquaSign' },
