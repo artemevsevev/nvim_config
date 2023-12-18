@@ -13,6 +13,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+  'ellisonleao/gruvbox.nvim',
   {
     'Exafunction/codeium.vim',
     event = 'BufEnter',
@@ -121,7 +122,14 @@ require('lazy').setup({
   'mg979/vim-visual-multi',
 })
 
-vim.cmd('colorscheme everforest')
+require('gruvbox').setup({
+  overrides = {
+    GitSignsAdd = { link = 'GruvboxGreenSign' },
+    GitSignsChange = { link = 'GruvboxAquaSign' },
+    GitSignsDelete = { link = 'GruvboxRedSign' },
+  },
+})
+vim.cmd('colorscheme gruvbox')
 
 require('base')
 require('keymap')
