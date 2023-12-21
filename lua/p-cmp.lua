@@ -28,6 +28,8 @@ local cmp_kinds = {
   TypeParameter = '  ',
 }
 
+require('luasnip.loaders.from_vscode').lazy_load()
+
 cmp.setup({
   formatting = {
     format = function(_, vim_item)
@@ -41,18 +43,20 @@ cmp.setup({
     end,
   },
   window = {
-    -- completion = cmp.config.window.bordered(),
-    -- documentation = cmp.config.window.bordered(),
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
   },
   mapping = cmp.mapping.preset.insert({
     ['<C-Space>'] = cmp.mapping.complete(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<CR>'] = cmp.mapping.confirm({ select = false }),
+    ['<C-k>'] = cmp.mapping.select_prev_item(),
+    ['<C-j>'] = cmp.mapping.select_next_item(),
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    -- { name = 'luasnip' },
-  }, {
+    { name = 'luasnip' },
     { name = 'buffer' },
+    { name = 'path' },
   }),
 })
 
