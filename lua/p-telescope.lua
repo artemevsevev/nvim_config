@@ -1,17 +1,14 @@
-local builtin = require('telescope.builtin')
 local keymap = vim.keymap
-
-keymap.set('n', '<leader>f', builtin.find_files, {})
-keymap.set('n', '<leader>g', builtin.live_grep, {})
-keymap.set('n', '<leader>b', builtin.buffers, {})
-
+local telescope = require('telescope')
 local actions = require('telescope.actions')
 
-require('telescope').setup({
+telescope.setup({
   defaults = {
     mappings = {
       i = {
         ['<esc>'] = actions.close,
+        ['<C-j>'] = actions.move_selection_next,
+        ['<C-k>'] = actions.move_selection_previous,
       },
     },
     file_ignore_patterns = {
@@ -33,3 +30,9 @@ require('telescope').setup({
     },
   },
 })
+
+telescope.load_extension('fzf')
+
+keymap.set('n', '<leader>f', '<cmd>Telescope find_files<cr>', {})
+keymap.set('n', '<leader>g', '<cmd>Telescope live_grep<cr>', {})
+keymap.set('n', '<leader>b', '<cmd>Telescope buffers<cr>', {})
