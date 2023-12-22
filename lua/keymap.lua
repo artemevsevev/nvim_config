@@ -2,6 +2,7 @@ vim.g.mapleader = ' '
 local keymap = vim.keymap
 
 keymap.set('n', '<c-a>', 'ggVG')
+keymap.set('n', 'U', '<c-r>')
 
 keymap.set({ 'n', 'x' }, '<leader>p', '"0p')
 keymap.set({ 'n', 'v' }, '<leader>d', [["_d]])
