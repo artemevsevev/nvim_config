@@ -1,46 +1,88 @@
--- Setup language servers.
-local lspconfig = require('lspconfig')
-lspconfig.lua_ls.setup({})
+local on_attach = function(_, bufnr)
+  local nmap = function(keys, func, desc)
+    if desc then
+      desc = 'LSP: ' .. desc
+    end
 
-local keymap = vim.keymap
+    vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
+  end
 
-require('lspsaga').setup({
-  ui = {
-    border = 'rounded',
+  nmap('<leader>r', vim.lsp.buf.rename, '[R]ename')
+  nmap('<leader>a', vim.lsp.buf.code_action, 'Code [A]ction')
+
+  nmap(
+    'gd',
+    require('telescope.builtin').lsp_definitions,
+    '[G]oto [D]efinition'
+  )
+  nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+  nmap(
+    'gI',
+    require('telescope.builtin').lsp_implementations,
+    '[G]oto [I]mplementation'
+  )
+  nmap(
+    'gt',
+    require('telescope.builtin').lsp_type_definitions,
+    'Type [D]efinition'
+  )
+  nmap(
+    '<leader>s',
+    require('telescope.builtin').lsp_document_symbols,
+    'Document [S]ymbols'
+  )
+  nmap(
+    '<leader>S',
+    require('telescope.builtin').lsp_dynamic_workspace_symbols,
+    '[W]orkspace [S]ymbols'
+  )
+
+  -- See `:help K` for why this keymap
+  nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
+  nmap('<C-p>', vim.lsp.buf.signature_help, 'Signature Documentation')
+
+  -- Lesser used LSP functionality
+  nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+  nmap('<leader>wl', function()
+    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+  end, '[W]orkspace [L]ist Folders')
+
+  -- Create a command `:Format` local to the LSP buffer
+  vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
+    vim.lsp.buf.format()
+  end, { desc = 'Format current buffer with LSP' })
+end
+
+local servers = {
+  rust_analyzer = {},
+  lua_ls = {
+    Lua = {
+      workspace = { checkThirdParty = false },
+      telemetry = { enable = false },
+    },
   },
-  symbol_in_winbar = {
-    enable = false,
-  },
+}
+
+require('neodev').setup()
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
+-- Ensure the servers above are installed
+local mason_lspconfig = require('mason-lspconfig')
+
+mason_lspconfig.setup({
+  ensure_installed = vim.tbl_keys(servers),
 })
 
-keymap.set('n', '[d', '<cmd>Lspsaga diagnostic_jump_prev<cr>')
-keymap.set('n', ']d', '<cmd>Lspsaga diagnostic_jump_next<cr>')
-keymap.set('n', '<leader>o', '<cmd>Lspsaga outline<cr>')
-keymap.set('n', '<leader>d', '<cmd>Lspsaga show_buf_diagnostics<cr>')
-keymap.set('n', '<leader>D', '<cmd>Lspsaga show_workspace_diagnostics<cr>')
-
-local builtin = require('telescope.builtin')
-
-vim.api.nvim_create_autocmd('LspAttach', {
-  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
-  callback = function(ev)
-    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-
-    local opts = { buffer = ev.buf }
-    vim.keymap.set('n', 'gd', '<cmd>Lspsaga goto_definition<cr>', opts)
-    vim.keymap.set('n', 'gy', '<cmd>Lspsaga goto_type_definition<cr>', opts)
-    vim.keymap.set('n', '<leader>k', '<cmd>Lspsaga hover_doc<cr>', opts)
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-    --vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-    -- vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
-    vim.keymap.set('n', '<space>r', '<cmd>Lspsaga rename<cr>', opts)
-    vim.keymap.set(
-      { 'n', 'v' },
-      '<space>a',
-      '<cmd>Lspsaga code_action<cr>',
-      opts
-    )
-    vim.keymap.set('n', 'gr', builtin.lsp_references, opts)
+mason_lspconfig.setup_handlers({
+  function(server_name)
+    require('lspconfig')[server_name].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      settings = servers[server_name],
+      filetypes = (servers[server_name] or {}).filetypes,
+    })
   end,
 })
 
