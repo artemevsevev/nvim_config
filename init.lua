@@ -135,6 +135,7 @@ require('lazy').setup({
     },
   },
   'mg979/vim-visual-multi',
+  { 'folke/which-key.nvim', opts = {} },
 })
 
 require('gruvbox').setup({
