@@ -1,6 +1,8 @@
 vim.g.mapleader = ' '
 local keymap = vim.keymap
 
+keymap.set({ 'n', 'v' }, '<space>', '<Nop>', { silent = true })
+
 keymap.set('n', '<c-a>', 'ggVG')
 keymap.set('n', 'U', '<c-r>')
 
@@ -16,8 +18,18 @@ keymap.set('i', 'jj', '<Esc>', { noremap = true })
 
 keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 
-keymap.set('n', 'j', [[v:count?'j':'gj']], { noremap = true, expr = true })
-keymap.set('n', 'k', [[v:count?'k':'gk']], { noremap = true, expr = true })
+keymap.set(
+  'n',
+  'k',
+  "v:count == 0 ? 'gk' : 'k'",
+  { expr = true, silent = true }
+)
+keymap.set(
+  'n',
+  'j',
+  "v:count == 0 ? 'gj' : 'j'",
+  { expr = true, silent = true }
+)
 
 keymap.set('n', '<c-j>', [[:m .+1<cr>==]])
 keymap.set('n', '<c-k>', [[:m .-2<cr>==]])

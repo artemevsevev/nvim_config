@@ -5,7 +5,7 @@ opt.relativenumber = true
 opt.scrolloff = 5
 opt.sidescrolloff = 5
 
-opt.hlsearch = true
+opt.hlsearch = false
 opt.incsearch = true
 
 opt.mouse:append('a')
@@ -25,14 +25,19 @@ vim.bo.autoread = true
 
 opt.cursorline = true
 opt.termguicolors = true
+opt.completeopt = 'menuone,noselect'
 
-opt.signcolumn = 'yes:2'
+opt.updatetime = 250
+opt.timeoutlen = 300
 
+opt.signcolumn = 'yes'
+
+local highlight_group =
+  vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
-    vim.highlight.on_yank({
-      higroup = 'IncSearch',
-      timeout = 300,
-    })
+    vim.highlight.on_yank()
   end,
+  group = highlight_group,
+  pattern = '*',
 })
