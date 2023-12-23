@@ -21,6 +21,7 @@ require('lazy').setup({
 
   'lewis6991/gitsigns.nvim',
   'simrat39/rust-tools.nvim',
+  'nvimdev/lspsaga.nvim',
   'nvim-lualine/lualine.nvim',
   {
     'folke/flash.nvim',
@@ -99,10 +100,9 @@ require('lazy').setup({
       'saadparwaiz1/cmp_luasnip',
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-cmdline',
-      'rafamadriz/friendly-snippets',
     },
   },
-  { 'folke/which-key.nvim', opts = {} },
+
   'MattesGroeger/vim-bookmarks',
   'tom-anders/telescope-vim-bookmarks.nvim',
   {
@@ -111,7 +111,6 @@ require('lazy').setup({
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
       { 'j-hui/fidget.nvim', opts = {} },
-      'folke/neodev.nvim',
     },
   },
   'WhoIsSethDaniel/mason-tool-installer.nvim',
@@ -160,6 +159,7 @@ require('base')
 require('keymap')
 require('p-mason')
 require('p-lsp')
+require('lsp-lua')
 require('p-conform')
 require('p-tree')
 require('p-telescope')
@@ -169,4 +169,5 @@ require('p-treesitter')
 require('p-text')
 require('p-comment')
 require('p-lualine')
+require('lsp-rust')
 require('p-git')
