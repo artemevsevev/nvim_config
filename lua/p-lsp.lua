@@ -36,7 +36,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<space>r', '<cmd>Lspsaga rename<cr>', opts)
     vim.keymap.set(
       { 'n', 'v' },
-      '<space>a',
+      '<space>ca',
       '<cmd>Lspsaga code_action<cr>',
       opts
     )

@@ -89,7 +89,14 @@ require('lazy').setup({
       require('nvim-surround').setup({})
     end,
   },
-  'nvim-treesitter/nvim-treesitter',
+  {
+    -- Highlight, edit, and navigate code
+    'nvim-treesitter/nvim-treesitter',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter-textobjects',
+    },
+    build = ':TSUpdate',
+  },
 
   {
     'hrsh7th/nvim-cmp',
