@@ -105,10 +105,14 @@ require('lazy').setup({
 
   'MattesGroeger/vim-bookmarks',
   'tom-anders/telescope-vim-bookmarks.nvim',
-  'sainnhe/everforest',
-  'williamboman/mason.nvim',
-  'williamboman/mason-lspconfig.nvim',
-  'neovim/nvim-lspconfig',
+  {
+    'neovim/nvim-lspconfig',
+    dependencies = {
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim',
+      { 'j-hui/fidget.nvim', opts = {} },
+    },
+  },
   'WhoIsSethDaniel/mason-tool-installer.nvim',
   {
     'stevearc/conform.nvim',
