@@ -30,7 +30,7 @@ opt.completeopt = 'menuone,noselect'
 opt.updatetime = 250
 opt.timeoutlen = 300
 
-opt.signcolumn = 'yes'
+opt.signcolumn = 'yes:2'
 
 local highlight_group =
   vim.api.nvim_create_augroup('YankHighlight', { clear = true })

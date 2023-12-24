@@ -11,6 +11,9 @@ require('lspsaga').setup({
   symbol_in_winbar = {
     enable = false,
   },
+  lightbulb = {
+    sign = false,
+  },
 })
 
 keymap.set('n', '[d', '<cmd>Lspsaga diagnostic_jump_prev<cr>')
@@ -37,7 +40,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<space>r', '<cmd>Lspsaga rename<cr>', opts)
     vim.keymap.set(
       { 'n', 'v' },
-      '<space>ca',
+      '<space>a',
       '<cmd>Lspsaga code_action<cr>',
       opts
     )
