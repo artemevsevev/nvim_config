@@ -134,15 +134,26 @@ require('lazy').setup({
   },
   {
     'nvim-telescope/telescope.nvim',
-    -- tag = '0.1.x',
+    branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
       { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
       'nvim-tree/nvim-web-devicons',
     },
   },
+
   'mg979/vim-visual-multi',
+
   { 'folke/which-key.nvim', opts = {} },
+
+  {
+    'saecki/crates.nvim',
+    tag = 'stable',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require('crates').setup()
+    end,
+  },
 })
 
 require('gruvbox').setup({

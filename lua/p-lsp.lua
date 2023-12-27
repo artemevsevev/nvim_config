@@ -34,7 +34,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gt', '<cmd>Lspsaga goto_type_definition<cr>', opts)
     vim.keymap.set('n', 'gf', '<cmd>Lspsaga finder<cr>', opts)
     vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<cr>', opts)
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+    vim.keymap.set('n', '<C-h>', vim.lsp.buf.signature_help, opts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
     -- vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
     vim.keymap.set('n', '<space>r', '<cmd>Lspsaga rename<cr>', opts)
@@ -45,6 +45,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
       opts
     )
     vim.keymap.set('n', 'gr', builtin.lsp_references, opts)
+    vim.keymap.set('n', 'gs', builtin.lsp_document_symbols, opts)
   end,
 })
 

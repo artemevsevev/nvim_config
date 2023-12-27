@@ -5,7 +5,7 @@ opt.relativenumber = true
 opt.scrolloff = 5
 opt.sidescrolloff = 5
 
-opt.hlsearch = false
+opt.hlsearch = true
 opt.incsearch = true
 
 opt.mouse:append('a')

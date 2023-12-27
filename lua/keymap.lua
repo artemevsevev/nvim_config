@@ -1,7 +1,9 @@
 vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 local keymap = vim.keymap
 
-keymap.set({ 'n', 'v' }, '<space>', '<Nop>', { silent = true })
+keymap.set({ 'n', 'v' }, '<space>', '<Nop>', { silent = true, remap = false })
 
 keymap.set('n', '<c-a>', 'ggVG')
 keymap.set('n', 'U', '<c-r>')
