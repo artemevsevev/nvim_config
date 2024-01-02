@@ -154,6 +154,12 @@ require('lazy').setup({
       require('crates').setup()
     end,
   },
+  {
+    'Kasama/nvim-custom-diagnostic-highlight',
+    config = function()
+      require('nvim-custom-diagnostic-highlight').setup({})
+    end,
+  },
 })
 
 require('gruvbox').setup({
