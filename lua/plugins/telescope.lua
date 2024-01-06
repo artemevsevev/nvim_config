@@ -15,10 +15,6 @@ local config = function()
       dynamic_preview_title = true,
       path_display = { 'smart' },
     },
-    file_ignore_patterns = {
-      '.git',
-      'lazy-lock.json',
-    },
     pickers = {
       find_files = {
         hidden = true,
