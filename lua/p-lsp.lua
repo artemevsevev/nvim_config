@@ -44,7 +44,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
       '<cmd>Lspsaga code_action<cr>',
       opts
     )
-    vim.keymap.set('n', 'gr', builtin.lsp_references, opts)
+    vim.keymap.set('n', 'gr', '<cmd>Lspsaga finder<cr>', opts)
     vim.keymap.set('n', 'gs', builtin.lsp_document_symbols, opts)
   end,
 })
