@@ -125,6 +125,16 @@ require('lazy').setup({
       disable_mouse = false,
     },
   },
+  {
+    'folke/noice.nvim',
+    event = 'VeryLazy',
+    opts = {},
+    dependencies = {
+      'MunifTanjim/nui.nvim',
+      'rcarriga/nvim-notify',
+    },
+  },
+  'rcarriga/nvim-notify',
 })
 
 -- require('gruvbox').setup({
