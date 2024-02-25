@@ -135,6 +135,12 @@ require('lazy').setup({
     },
   },
   'rcarriga/nvim-notify',
+  {
+    'goolord/alpha-nvim',
+    config = function()
+      require('alpha').setup(require('alpha.themes.dashboard').config)
+    end,
+  },
 })
 
 -- require('gruvbox').setup({
