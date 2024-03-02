@@ -1,7 +1,7 @@
 require('lualine').setup({
   options = {
     icons_enabled = false,
-    theme = 'gruvbox-material',
+    theme = 'sonokai',
     component_separators = '|',
     section_separators = { left = '', right = '' },
     disabled_filetypes = {
