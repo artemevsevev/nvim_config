@@ -14,7 +14,12 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   -- 'ellisonleao/gruvbox.nvim',
-  'sainnhe/sonokai',
+  {
+    'sainnhe/everforest',
+    init = function()
+      vim.g.everforest_background = 'hard'
+    end,
+  },
   'RRethy/vim-illuminate',
   -- 'sainnhe/gruvbox-material',
   {
@@ -162,7 +167,7 @@ require('lazy').setup({
 -- })
 -- vim.cmd('colorscheme gruvbox')
 -- vim.cmd('colorscheme gruvbox-material')
-vim.cmd('colorscheme sonokai')
+vim.cmd('colorscheme everforest')
 
 require('leap').create_default_mappings()
 
