@@ -13,15 +13,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  -- 'ellisonleao/gruvbox.nvim',
-  {
-    'sainnhe/everforest',
-    init = function()
-      vim.g.everforest_background = 'hard'
-    end,
-  },
   'RRethy/vim-illuminate',
-  -- 'sainnhe/gruvbox-material',
+  'sainnhe/gruvbox-material',
   {
     'Exafunction/codeium.vim',
     event = 'BufEnter',
@@ -124,13 +117,13 @@ require('lazy').setup({
       require('nvim-custom-diagnostic-highlight').setup({})
     end,
   },
-  {
-    'm4xshen/hardtime.nvim',
-    dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
-    opts = {
-      disable_mouse = false,
-    },
-  },
+  -- {
+  --   'm4xshen/hardtime.nvim',
+  --   dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
+  --   opts = {
+  --     disable_mouse = false,
+  --   },
+  -- },
   {
     'folke/noice.nvim',
     event = 'VeryLazy',
@@ -166,8 +159,7 @@ require('lazy').setup({
 --   },
 -- })
 -- vim.cmd('colorscheme gruvbox')
--- vim.cmd('colorscheme gruvbox-material')
-vim.cmd('colorscheme everforest')
+vim.cmd('colorscheme gruvbox-material')
 
 require('leap').create_default_mappings()
 
