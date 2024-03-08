@@ -14,7 +14,13 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   'RRethy/vim-illuminate',
-  'sainnhe/gruvbox-material',
+  {
+    'sainnhe/gruvbox-material',
+    config = function()
+      vim.g.gruvbox_material_foreground = 'original'
+      vim.g.gruvbox_material_statusline_style = 'original'
+    end,
+  },
   {
     'Exafunction/codeium.vim',
     event = 'BufEnter',
@@ -159,6 +165,7 @@ require('lazy').setup({
 --   },
 -- })
 -- vim.cmd('colorscheme gruvbox')
+
 vim.cmd('colorscheme gruvbox-material')
 
 require('leap').create_default_mappings()
