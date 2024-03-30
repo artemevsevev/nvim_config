@@ -6,4 +6,15 @@ capabilities = vim.tbl_deep_extend(
   require('cmp_nvim_lsp').default_capabilities()
 )
 
-require('lspconfig').gopls.setup({ capabilities = capabilities })
+require('lspconfig').gopls.setup({
+  capabilities = capabilities,
+  settings = {
+    gopls = {
+      ['ui.inlayhint.hints'] = {
+        compositeLiteralFields = true,
+        constantValues = true,
+        parameterNames = true,
+      },
+    },
+  },
+})
