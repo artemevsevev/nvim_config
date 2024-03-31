@@ -11,8 +11,8 @@ opt.incsearch = true
 opt.mouse:append('a')
 opt.clipboard:append('unnamedplus')
 
-opt.tabstop = 2
-opt.shiftwidth = 2
+opt.tabstop = 4
+opt.shiftwidth = 4
 opt.expandtab = true
 opt.autoindent = true
 
@@ -30,7 +30,7 @@ opt.completeopt = 'menuone,noselect'
 opt.updatetime = 250
 opt.timeoutlen = 300
 
-opt.signcolumn = 'yes:2'
+opt.signcolumn = 'yes'
 
 local highlight_group =
   vim.api.nvim_create_augroup('YankHighlight', { clear = true })
