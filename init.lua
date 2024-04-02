@@ -27,7 +27,11 @@ require('lazy').setup({
     event = 'BufEnter',
   },
   'lewis6991/gitsigns.nvim',
-  'simrat39/rust-tools.nvim',
+  {
+    'mrcjkb/rustaceanvim',
+    version = '^4',
+    ft = { 'rust' },
+  },
   'nvimdev/lspsaga.nvim',
   'nvim-lualine/lualine.nvim',
   {
