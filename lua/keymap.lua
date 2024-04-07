@@ -5,10 +5,10 @@ local keymap = vim.keymap
 
 keymap.set({ 'n', 'v' }, '<space>', '<Nop>', { silent = true, remap = false })
 
-keymap.set('n', '<c-a>', 'ggVG')
+-- keymap.set('n', '<c-a>', 'ggVG')
 keymap.set('n', 'U', '<c-r>')
 
-keymap.set({ 'n', 'x' }, '<leader>p', '"0p')
+keymap.set({ 'n', 'x' }, 'p', '"0p')
 keymap.set({ 'n', 'v' }, '<leader>d', [["_d]])
 
 keymap.set('n', '<leader>q', '<cmd>q<cr>')
@@ -18,7 +18,7 @@ keymap.set('n', '<leader>x', '<cmd>x<cr>')
 keymap.set('i', 'jk', '<Esc>', { noremap = true })
 keymap.set('i', 'jj', '<Esc>', { noremap = true })
 
-keymap.set('n', '<leader>h', ':nohlsearch<CR>')
+keymap.set('n', '<esc>', '<cmd>nohlsearch<cr>')
 
 keymap.set(
   'n',
@@ -33,10 +33,35 @@ keymap.set(
   { expr = true, silent = true }
 )
 
-keymap.set('n', '<c-j>', [[:m .+1<cr>==]])
-keymap.set('n', '<c-k>', [[:m .-2<cr>==]])
-keymap.set('v', '<c-j>', [[:m '>+1<cr>gv=gv]])
-keymap.set('v', '<c-k>', [[:m '<-2<cr>gv=gv]])
+-- keymap.set('n', '<c-j>', [[:m .+1<cr>==]])
+-- keymap.set('n', '<c-k>', [[:m .-2<cr>==]])
+-- keymap.set('v', '<c-j>', [[:m '>+1<cr>gv=gv]])
+-- keymap.set('v', '<c-k>', [[:m '<-2<cr>gv=gv]])
+
+keymap.set(
+  'n',
+  '<C-h>',
+  '<C-w><C-h>',
+  { desc = 'Move focus to the left window' }
+)
+keymap.set(
+  'n',
+  '<C-l>',
+  '<C-w><C-l>',
+  { desc = 'Move focus to the right window' }
+)
+keymap.set(
+  'n',
+  '<C-j>',
+  '<C-w><C-j>',
+  { desc = 'Move focus to the lower window' }
+)
+keymap.set(
+  'n',
+  '<C-k>',
+  '<C-w><C-k>',
+  { desc = 'Move focus to the upper window' }
+)
 
 keymap.set('n', 'n', 'nzzzv')
 keymap.set('n', 'N', 'Nzzzv')

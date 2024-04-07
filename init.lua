@@ -67,6 +67,7 @@ require('lazy').setup({
 
   {
     'hrsh7th/nvim-cmp',
+    event = 'InsertEnter',
     dependencies = {
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
@@ -150,6 +151,7 @@ require('lazy').setup({
       require('alpha').setup(require('alpha.themes.dashboard').config)
     end,
   },
+  'tpope/vim-sleuth',
 })
 
 -- require('gruvbox').setup({

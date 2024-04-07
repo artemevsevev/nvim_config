@@ -19,7 +19,18 @@ require('lualine').setup({
   },
   sections = {
     lualine_a = { 'mode' },
-    lualine_b = { 'branch', 'diagnostics' },
+    lualine_b = {
+      'branch',
+      {
+        'diagnostics',
+        symbols = {
+          error = ' ',
+          warn = ' ',
+          info = ' ',
+          hint = ' ',
+        },
+      },
+    },
     lualine_c = { 'filename' },
     lualine_x = { 'filetype' },
     lualine_y = { 'progress' },
