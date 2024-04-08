@@ -14,6 +14,11 @@ require('lspsaga').setup({
     enable = false,
     sign = false,
   },
+  definition = {
+    keys = {
+      edit = 'o',
+    },
+  },
 })
 
 keymap.set('n', '[d', '<cmd>Lspsaga diagnostic_jump_prev<cr>')
@@ -22,7 +27,7 @@ keymap.set('n', '<leader>o', '<cmd>Lspsaga outline<cr>')
 keymap.set('n', '<leader>d', '<cmd>Lspsaga show_buf_diagnostics<cr>')
 keymap.set('n', '<leader>D', '<cmd>Lspsaga show_workspace_diagnostics<cr>')
 
-local builtin = require('telescope.builtin')
+-- local builtin = require('telescope.builtin')
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
@@ -30,14 +35,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
     local opts = { buffer = ev.buf }
-    vim.keymap.set('n', 'gd', '<cmd>Lspsaga goto_definition<cr>', opts)
-    vim.keymap.set('n', 'gt', '<cmd>Lspsaga goto_type_definition<cr>', opts)
+    vim.keymap.set('n', 'gd', '<cmd>Lspsaga peek_definition<cr>', opts)
+    vim.keymap.set('n', 'gt', '<cmd>Lspsaga peek_type_definition<cr>', opts)
     vim.keymap.set('n', 'gf', '<cmd>Lspsaga finder<cr>', opts)
     vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<cr>', opts)
-    vim.keymap.set('n', '<C-h>', vim.lsp.buf.signature_help, opts)
+    -- vim.keymap.set('n', '<C-h>', vim.lsp.buf.signature_help, opts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
     -- vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
     vim.keymap.set('n', '<space>r', '<cmd>Lspsaga rename<cr>', opts)
+    vim.keymap.set('n', '<space>c', '<cmd>Lspsaga term_toggle<cr>', opts)
     vim.keymap.set(
       { 'n', 'v' },
       '<space>a',
@@ -45,7 +51,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
       opts
     )
     vim.keymap.set('n', 'gr', '<cmd>Lspsaga finder<cr>', opts)
-    vim.keymap.set('n', 'gs', builtin.lsp_document_symbols, opts)
+    vim.keymap.set('n', 'gs', '<cmd>Lspsaga outline<cr>', opts)
   end,
 })
 
