@@ -5,10 +5,10 @@ local keymap = vim.keymap
 
 keymap.set({ 'n', 'v' }, '<space>', '<Nop>', { silent = true, remap = false })
 
--- keymap.set('n', '<c-a>', 'ggVG')
+keymap.set('n', '<c-a>', 'ggVG')
 keymap.set('n', 'U', '<c-r>')
 
-keymap.set({ 'n', 'x' }, 'p', '"0p')
+keymap.set({ 'n', 'x' }, '<leader>p', '"0p')
 keymap.set({ 'n', 'v' }, '<leader>d', [["_d]])
 
 keymap.set('n', '<leader>q', '<cmd>q<cr>')
