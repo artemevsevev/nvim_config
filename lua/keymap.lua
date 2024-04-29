@@ -35,8 +35,8 @@ keymap.set(
 
 -- keymap.set('n', '<c-j>', [[:m .+1<cr>==]])
 -- keymap.set('n', '<c-k>', [[:m .-2<cr>==]])
--- keymap.set('v', '<c-j>', [[:m '>+1<cr>gv=gv]])
--- keymap.set('v', '<c-k>', [[:m '<-2<cr>gv=gv]])
+keymap.set('v', '<c-j>', [[:m '>+1<cr>gv=gv]])
+keymap.set('v', '<c-k>', [[:m '<-2<cr>gv=gv]])
 
 keymap.set(
   'n',
@@ -67,3 +67,6 @@ keymap.set('n', 'n', 'nzzzv')
 keymap.set('n', 'N', 'Nzzzv')
 keymap.set('n', '<c-d>', '<c-d>zz')
 keymap.set('n', '<c-u>', '<c-u>zz')
+
+keymap.set('v', '<', '<gv')
+keymap.set('v', '>', '>gv')
