@@ -76,7 +76,6 @@ return {
       'stevearc/conform.nvim',
       opts = {},
     },
-    'nvim-tree/nvim-tree.lua',
     'nvim-tree/nvim-web-devicons',
     {
       'windwp/nvim-autopairs',
