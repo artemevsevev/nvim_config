@@ -92,8 +92,8 @@ return {
         end, { 'i', 's' }),
       }),
       window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        -- completion = cmp.config.window.bordered(),
+        -- documentation = cmp.config.window.bordered(),
       },
       sources = {
         { name = 'codeium' },
@@ -125,7 +125,12 @@ return {
             return vim_item
           else
             -- From lspkind
-            return lspkind.cmp_format()(entry, vim_item)
+            return lspkind.cmp_format({
+              mode = 'symbol',
+              maxwidth = 50,
+              ellipsis_char = '...',
+              symbol_map = { Codeium = '' },
+            })(entry, vim_item)
           end
         end,
       },

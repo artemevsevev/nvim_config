@@ -7,6 +7,9 @@ return {
         vim.g.gruvbox_material_foreground = 'original'
         -- vim.g.gruvbox_material_background = 'original'
         vim.g.gruvbox_material_statusline_style = 'original'
+        vim.g.gruvbox_material_float_style = 'dim'
+        -- vim.g.gruvbox_material_visual = 'reverse'
+        -- vim.g.gruvbox_material_menu_selection_background = 'red'
       end,
     },
     'lewis6991/gitsigns.nvim',
