@@ -45,6 +45,14 @@ require('lazy').setup({ import = 'plugins' }, {
 })
 
 vim.cmd('colorscheme gruvbox-material')
+vim.cmd([[
+highlight! link NeoTreeDirectoryIcon NvimTreeFolderIcon
+highlight! link NeoTreeDirectoryName NvimTreeFolderName
+highlight! link NeoTreeSymbolicLinkTarget NvimTreeSymlink
+highlight! link NeoTreeRootName NvimTreeRootFolder
+highlight! link NeoTreeDirectoryName NvimTreeOpenedFolderName
+highlight! link NeoTreeFileNameOpened NvimTreeOpenedFile
+]])
 
 require('leap').create_default_mappings()
 
