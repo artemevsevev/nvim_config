@@ -10,9 +10,9 @@ return {
   keys = {
     {
       '<leader>e',
-      ':Neotree toggle left<CR>',
+      ':Neotree toggle float<CR>',
       silent = true,
-      desc = 'Left File Explorer',
+      desc = 'Float File Explorer',
     },
   },
 
@@ -60,7 +60,7 @@ return {
       },
       window = {
 
-        position = 'left',
+        position = 'float',
 
         width = 35,
         mappings = {
