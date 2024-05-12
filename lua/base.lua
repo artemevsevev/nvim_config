@@ -3,7 +3,7 @@ opt.number = true
 opt.relativenumber = true
 
 opt.scrolloff = 10
-opt.sidescrolloff = 5
+opt.sidescrolloff = 10
 
 opt.hlsearch = true
 opt.incsearch = true

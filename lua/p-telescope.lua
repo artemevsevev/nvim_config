@@ -29,9 +29,15 @@ telescope.setup({
       preview_width = 0.5,
     },
   },
+  extensions = {
+    ['ui-select'] = {
+      require('telescope.themes').get_dropdown(),
+    },
+  },
 })
 
 telescope.load_extension('fzf')
+telescope.load_extension('ui-select')
 
 keymap.set('n', '<leader>f', '<cmd>Telescope find_files<cr>', {})
 keymap.set('n', '<leader>g', '<cmd>Telescope live_grep<cr>', {})
