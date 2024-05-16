@@ -52,6 +52,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
     )
     vim.keymap.set('n', 'gr', '<cmd>Lspsaga finder<cr>', opts)
     vim.keymap.set('n', 'gs', '<cmd>Lspsaga outline<cr>', opts)
+
+    vim.lsp.inlay_hint.enable()
   end,
 })
 
