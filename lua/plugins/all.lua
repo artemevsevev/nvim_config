@@ -31,14 +31,6 @@ return {
     },
     'gcmt/wildfire.vim',
     {
-      'kylechui/nvim-surround',
-      version = '*', -- Use for stability; omit to use `main` branch for the latest features
-      event = 'VeryLazy',
-      config = function()
-        require('nvim-surround').setup({})
-      end,
-    },
-    {
       -- Highlight, edit, and navigate code
       'nvim-treesitter/nvim-treesitter',
       dependencies = {
@@ -60,8 +52,6 @@ return {
         'onsails/lspkind.nvim',
       },
     },
-    'MattesGroeger/vim-bookmarks',
-    'tom-anders/telescope-vim-bookmarks.nvim',
     {
       'neovim/nvim-lspconfig',
       dependencies = {
