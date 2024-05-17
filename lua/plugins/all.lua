@@ -29,11 +29,6 @@ return {
       dependencies = { 'nvim-lua/plenary.nvim' },
       opts = {},
     },
-    {
-      'numToStr/Comment.nvim',
-      opts = {},
-      lazy = false,
-    },
     'gcmt/wildfire.vim',
     {
       'kylechui/nvim-surround',
