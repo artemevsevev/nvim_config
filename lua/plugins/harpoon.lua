@@ -22,5 +22,17 @@ return {
         ui_nav_wrap = true,
       })
     end, { desc = 'Previous harpoon' }),
+    -- vim.keymap.set('n', '<C-m>', function()
+    --   require('harpoon'):list():select(1)
+    -- end),
+    -- vim.keymap.set('n', '<C-,>', function()
+    --   require('harpoon'):list():select(2)
+    -- end),
+    -- vim.keymap.set('n', '<C-.>', function()
+    --   require('harpoon'):list():select(3)
+    -- end),
+    -- vim.keymap.set('n', '<C-/>', function()
+    --   require('harpoon'):list():select(4)
+    -- end),
   },
 }

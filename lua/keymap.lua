@@ -70,3 +70,6 @@ keymap.set('n', '<c-u>', '<c-u>zz')
 
 keymap.set('v', '<', '<gv')
 keymap.set('v', '>', '>gv')
+
+keymap.set({ 'n', 'v' }, 'gh', '^')
+keymap.set({ 'n', 'v' }, 'gl', '$')
