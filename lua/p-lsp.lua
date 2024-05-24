@@ -5,10 +5,10 @@ local keymap = vim.keymap
 
 require('lspsaga').setup({
   ui = {
-    border = 'rounded',
+    border = 'none',
   },
   symbol_in_winbar = {
-    enable = false,
+    enable = true,
   },
   lightbulb = {
     enable = false,
