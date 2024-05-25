@@ -8,7 +8,7 @@ require('lspsaga').setup({
     border = 'none',
   },
   symbol_in_winbar = {
-    enable = true,
+    enable = false,
   },
   lightbulb = {
     enable = false,
