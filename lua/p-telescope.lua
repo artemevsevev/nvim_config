@@ -39,6 +39,9 @@ telescope.setup({
 telescope.load_extension('fzf')
 telescope.load_extension('ui-select')
 
-keymap.set('n', '<leader>f', '<cmd>Telescope find_files<cr>', {})
-keymap.set('n', '<leader>g', '<cmd>Telescope live_grep<cr>', {})
-keymap.set('n', '<leader>b', '<cmd>Telescope buffers<cr>', {})
+local builtin = require('telescope.builtin')
+
+keymap.set('n', '<leader>f', builtin.find_files, {})
+keymap.set('n', '<leader>g', builtin.live_grep, {})
+keymap.set('n', '<leader>b', builtin.buffers, {})
+keymap.set('n', '<leader><leader>', builtin.oldfiles, {})
