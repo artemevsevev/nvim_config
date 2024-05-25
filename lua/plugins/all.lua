@@ -120,10 +120,10 @@ return {
       opts = {},
       dependencies = {
         'MunifTanjim/nui.nvim',
-        'rcarriga/nvim-notify',
+        -- 'rcarriga/nvim-notify',
       },
     },
-    'rcarriga/nvim-notify',
+    -- 'rcarriga/nvim-notify',
     {
       'goolord/alpha-nvim',
       config = function()
