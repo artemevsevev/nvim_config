@@ -19,6 +19,11 @@ return {
     dashboard.section.header.val = vim.split(logo, '\n')
     dashboard.section.buttons.val = {
       dashboard.button(
+        'e',
+        '󰙅 ' .. ' File Tree',
+        ':Neotree toggle float<CR>'
+      ),
+      dashboard.button(
         'f',
         ' ' .. ' Find file',
         ':Telescope find_files <CR>'
@@ -30,12 +35,12 @@ return {
       ),
       dashboard.button(
         'r',
-        ' ' .. ' Recent files',
+        ' ' .. ' Recent files',
         ':Telescope oldfiles <CR>'
       ),
       dashboard.button(
         'g',
-        ' ' .. ' Find text',
+        ' ' .. ' Find text',
         ':Telescope live_grep <CR>'
       ),
       -- dashboard.button(
@@ -72,18 +77,18 @@ return {
 
     require('alpha').setup(dashboard.opts)
 
-    vim.api.nvim_create_autocmd('User', {
-      pattern = 'LazyVimStarted',
-      callback = function()
-        local stats = require('lazy').stats()
-        local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-        dashboard.section.footer.val = '⚡ Neovim loaded '
-          .. stats.count
-          .. ' plugins in '
-          .. ms
-          .. 'ms'
-        pcall(vim.cmd.AlphaRedraw)
-      end,
-    })
+    -- vim.api.nvim_create_autocmd('User', {
+    --   pattern = 'LazyVimStarted',
+    --   callback = function()
+    --     local stats = require('lazy').stats()
+    --     local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+    --     dashboard.section.footer.val = '⚡ Neovim loaded '
+    --       .. stats.count
+    --       .. ' plugins in '
+    --       .. ms
+    --       .. 'ms'
+    --     pcall(vim.cmd.AlphaRedraw)
+    --   end,
+    -- })
   end,
 }
