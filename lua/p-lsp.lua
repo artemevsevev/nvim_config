@@ -5,7 +5,7 @@ local keymap = vim.keymap
 
 require('lspsaga').setup({
   ui = {
-    border = 'none',
+    border = 'single',
   },
   symbol_in_winbar = {
     enable = false,
