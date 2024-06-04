@@ -24,10 +24,10 @@ require('lualine').setup({
       {
         'diagnostics',
         symbols = {
-          error = ' ',
+          error = ' ',
           warn = ' ',
-          info = ' ',
-          hint = ' ',
+          info = ' ',
+          hint = '󰌵',
         },
       },
     },

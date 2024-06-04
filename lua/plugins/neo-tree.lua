@@ -17,6 +17,23 @@ return {
   },
 
   config = function()
+    vim.fn.sign_define(
+      'DiagnosticSignError',
+      { text = ' ', texthl = 'DiagnosticSignError' }
+    )
+    vim.fn.sign_define(
+      'DiagnosticSignWarn',
+      { text = ' ', texthl = 'DiagnosticSignWarn' }
+    )
+    vim.fn.sign_define(
+      'DiagnosticSignInfo',
+      { text = ' ', texthl = 'DiagnosticSignInfo' }
+    )
+    vim.fn.sign_define(
+      'DiagnosticSignHint',
+      { text = '󰌵 ', texthl = 'DiagnosticSignHint' }
+    )
+
     require('neo-tree').setup({
       close_if_last_window = true,
       popup_border_style = 'single',
@@ -36,25 +53,22 @@ return {
           highlight = 'NeoTreeModified',
         },
         icon = {
-          folder_closed = '',
-          folder_open = '',
-          folder_empty = '',
-          folder_empty_open = '',
+          folder_closed = '',
+          folder_open = '',
+          folder_empty = '󰜌',
         },
         git_status = {
           symbols = {
-            -- Change type
-            added = '',
-
-            deleted = '',
-            modified = '',
-            renamed = '',
+            added = '  ',
+            modified = '  ',
+            deleted = '✖ ',
+            renamed = '󰁕 ',
             -- Status type
-            untracked = '',
-            ignored = '',
-            unstaged = '',
-            staged = '',
-            conflict = '',
+            untracked = ' ',
+            ignored = ' ',
+            unstaged = '󰄱 ',
+            staged = ' ',
+            conflict = ' ',
           },
         },
       },
@@ -62,7 +76,7 @@ return {
 
         position = 'float',
 
-        width = 35,
+        width = 40,
         mappings = {
 
           ['h'] = function(state)
@@ -109,6 +123,9 @@ return {
           never_show = {
             '.DS_Store',
             'thumbs.db',
+          },
+          follow_current_file = {
+            enabled = true,
           },
         },
       },
