@@ -16,6 +16,7 @@ opt.shiftwidth = 4
 opt.expandtab = true
 opt.autoindent = true
 opt.breakindent = true
+opt.smartindent = true
 
 opt.ignorecase = true
 opt.smartcase = true

@@ -66,11 +66,11 @@ return {
       opts = {},
     },
     'nvim-tree/nvim-web-devicons',
-    {
-      'windwp/nvim-autopairs',
-      event = 'InsertEnter',
-      opts = {},
-    },
+    -- {
+    --   'windwp/nvim-autopairs',
+    --   event = 'InsertEnter',
+    --   opts = {},
+    -- },
     {
       'nvim-telescope/telescope.nvim',
       event = 'VimEnter',
